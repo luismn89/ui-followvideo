@@ -1,0 +1,80 @@
+.sticky {
+    background: black;
+    height: 100%;
+    width: 100%;
+}
+
+.sticky-active .sticky-inner {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 100%;
+    width: 360px;
+    max-width: 90%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #000;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
+    z-index: 101;
+    -webkit-animation-name: fadeInOne;
+    animation-name: fadeInOne;
+    -webkit-animation-duration: .6s;
+    animation-duration: .6s;
+    -webkit-transition: width .5s, margin .5s, -webkit-transform .5s;
+    transition: width .5s, margin .5s, -webkit-transform .5s1;
+    transition: transform .5s, margin .5s;
+    transition: transform .5s, margin .5s, -webkit-transform .5s;
+}
+
+.sticky-inactive .sticky-inner {
+    width: 640px;
+    height: 360px;
+    -webkit-animation-name: fadeInTwo;
+    animation-name: fadeInTwo;
+    -webkit-animation-duration: .6s;
+    animation-duration: .6s
+}
+
+@-webkit-keyframes fadeInOne {
+    from {
+        opacity: 0;
+        -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0)
+    }
+    to {
+        opacity: 1;
+        -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100)
+    }
+}
+
+@keyframes fadeInOne {
+    from {
+        opacity: 0;
+        -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0)
+    }
+    to {
+        opacity: 1;
+        -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100)
+    }
+}
+
+@-webkit-keyframes fadeInTwo {
+    from {
+        opacity: 0;
+        -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0)
+    }
+    to {
+        opacity: 1;
+        -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100)
+    }
+}
+
+@keyframes fadeInTwo {
+    from {
+        opacity: 0;
+        -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0)
+    }
+    to {
+        opacity: 1;
+        -ms-filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100)
+    }
+}

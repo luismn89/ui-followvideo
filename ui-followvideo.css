@@ -1,21 +1,65 @@
 .sticky {
     background: black;
     height: 100%;
+    position: relative;
     width: 100%;
 }
 
+.sticky-layer {
+    display: none;
+    height:100%; 
+    position:absolute; top:0; 
+    width:100%; 
+    z-index:99999;
+}
+
+.sticky-close {
+    background: url('sticky-cancel.svg') no-repeat center;
+    height: 20px;
+    left: 5px;
+}
+
+.sticky-out {
+    background: url('sticky-window.svg') no-repeat center;
+    height: 25px;
+    left: 49%;
+}
+
+.sticky-icon {
+    background-size: 20px;
+    cursor:pointer;
+    display: none;
+    position: absolute;
+    top: 5px;
+    width: 20px;
+    z-index: 99999;
+}
+
+.sticky-active:hover .sticky-close,
+.sticky-inactive:hover .sticky-out  {
+    display: block;
+}
+
+.sticky-hold .sticky-layer {
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: -ms-grabbing;
+    cursor: -o-grabbing;
+    cursor: grabbing;
+}
+
 .sticky-active .sticky-inner {
-    position: fixed;
+    background: #000;
     bottom: 10px;
+    box-shadow: 3px 4px 15px 0 rgba(0, 0, 0, 0.75);
+    box-sizing: border-box;
+    height: 250px;
+    max-width: 90%;
+    position: fixed !important;
     right: 10px;
     width: 100%;
-    width: 360px;
-    max-width: 90%;
-    padding: 20px;
-    box-sizing: border-box;
-    background: #000;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
-    z-index: 101;
+    width: 450px;
+    z-index: 15000;
     -webkit-animation-name: fadeInOne;
     animation-name: fadeInOne;
     -webkit-animation-duration: .6s;
@@ -26,9 +70,14 @@
     transition: transform .5s, margin .5s, -webkit-transform .5s;
 }
 
+.sticky-active .sticky-inner:hover {
+    opacity: 1;
+    cursor:pointer;
+}
+
 .sticky-inactive .sticky-inner {
-    width: 640px;
     height: 360px;
+    width: 640px;
     -webkit-animation-name: fadeInTwo;
     animation-name: fadeInTwo;
     -webkit-animation-duration: .6s;
